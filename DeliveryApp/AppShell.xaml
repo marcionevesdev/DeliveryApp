@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DeliveryApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DeliveryApp"
+    xmlns:views="clr-namespace:DeliveryApp.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.ForegroundColor="White"
+    Shell.TitleColor="White"
+    Shell.TabBarForegroundColor="white"
+    Shell.TabBarBackgroundColor="#FF3D00"
+    Shell.TabBarUnselectedColor="#DDDDDD"
+    Shell.TabBarTitleColor="white"
+    BackgroundColor="#FF3D00"
+    Title="DeliveryApp">
+
+    <Shell.FlyoutHeader>
+        <Grid Padding="20" BackgroundColor="#FF3D00">
+            <VerticalStackLayout>
+                <Label Text="DeliveryApp" 
+                       FontAttributes="Bold"
+                       FontSize="24"
+                       TextColor="white" 
+                       HorizontalOptions="Start" 
+                       Margin="0,0,20,0" />
+                <Label Text="Aplicativo para entrega de pedidos de restaurantes." FontSize="14" TextColor="white" Margin="0,10,0,0"/>
+
+                <!-- Autor do App -->
+                <Label
+                    Text="COTI Informática - MAUI.NET"
+                    FontSize="14"
+                    TextColor="White"
+                    Margin="0, 10, 0, 0"
+                />
+
+            </VerticalStackLayout>
+            
+        </Grid> 
+        
+    </Shell.FlyoutHeader>
+    
+    <!-- Menu TabBar com as páginas do projeto -->
+
+    <TabBar>
+        <ShellContent Title="Restaurantes" Icon="home.png" ContentTemplate="{DataTemplate views:Restaurantes}"/>        
+        <ShellContent Title="Pesquisa" Icon="search.png" ContentTemplate="{DataTemplate views:Pesquisa}"/>        
+        <ShellContent Title="Carrinho"  Icon="cart.png" ContentTemplate="{DataTemplate views:Carrinho}"/>        
+        <ShellContent Title="Usuario" Icon="profile.png" ContentTemplate="{DataTemplate views:Usuario}"/>
+    </TabBar>
+
+
+</Shell>

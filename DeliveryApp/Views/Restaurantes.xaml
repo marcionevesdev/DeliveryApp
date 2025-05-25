@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliveryApp.Views.Restaurantes"
+             Title="Restaurantes">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- fundo gradiente -->
+            <VerticalStackLayout.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#800000" Offset="0.0" />
+                    <GradientStop Color="#E60000" Offset="1.0" />
+                </LinearGradientBrush>
+            </VerticalStackLayout.Background>
+
+
+            <Label 
+            Text="Bem vindo ao Delivery App !"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            FontSize="24"/>
+
+            <CollectionView ItemsSource="{Binding Restaurantes}" Margin="0" VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="5" Padding="10" HasShadow="true" CornerRadius="10" BackgroundColor="White">
+                            <Grid ColumnDefinitions="100, *, Auto" RowDefinitions="Auto, Auto">
+                                <Image Source="{Binding Imagem}}"
+                                   Grid.RowSpan="2" 
+                                   Grid.Column="0"
+                                   HeightRequest="80"                                   
+                                   WidthRequest="80" 
+                                   Aspect="Fill"/>
+                                <Label Text="{Binding Nome}" 
+                                   Grid.Column="1" 
+                                   FontAttributes="Bold" 
+                                   FontSize="18" 
+                                   VerticalOptions="Center"/>
+                                <Label Text="{Binding Categoria}" 
+                                   Grid.Column="1" 
+                                   Grid.Row="1"
+                                   FontAttributes="Bold" 
+                                   FontSize="18" 
+                                   VerticalOptions="Center"
+                                   TextColor="Gray"/>
+                                <Label Text="{Binding TempoDeEntrega}" 
+                                   Grid.Column="2"                                    
+                                   FontAttributes="Bold" 
+                                   FontSize="12" 
+                                   VerticalOptions="Center"
+                                   TextColor="Gray"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
